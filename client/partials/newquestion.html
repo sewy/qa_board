@@ -1,0 +1,16 @@
+<a href="#/questionboard">Home</a> | <a href="" ng-click="logout()">logout</a>
+<h1>New Question</h1>
+<form name="errorForm">
+	<ul>
+		<li>Question: </li>
+		<li><textarea name='q' rows=5 cols=40 ng-model="question.question" ng-minlength="10" required></textarea></li>
+		<br>
+		<li>Description (Optional): </li>
+		<li><textarea rows=5 cols=40 ng-model="question.description"></textarea></li>
+		<li><input type="submit" value="Cancel"> <input type="Submit" value="Submit" ng-click="newquestion(question)"></li>
+	</ul>
+</form>
+ <div ng-messages="errorForm.q.$error">
+     <p ng-message="minlength">The question is too short.</p>
+     <p ng-message="required">The question is required.</p>
+ </div>

@@ -1,0 +1,20 @@
+<a href="" ng-click="logout()">logout</a>
+<br>
+<br>
+<a href="#/questionboard">Home</a> | <a href="#/showanswers/{{question._id}}">Go Back to Question</a>
+<h3>{{question.question}}</h3>
+<p>{{question.description}}</p>
+<form name="errorForm">
+	<ul>
+		<li>Your Answer:</li>
+		<li><textarea name="a" rows=4 cols=40 ng-model="answer.answer" ng-minlength="5" required></textarea></li>
+		<br>
+		<li>Supporting Details for your answer (optional)</li>
+		<li><textarea rows=4 cols=40 ng-model="answer.details"></textarea></li>
+		<li><button>Cancel</button> <button ng-click="newanswer(answer)">Submit</button></li>
+	</ul>
+</form>
+<div ng-messages="errorForm.a.$error">
+     <p ng-message="minlength">The answer is too short.</p>
+     <p ng-message="required">The answer is required.</p>
+</div>

@@ -1,0 +1,16 @@
+<a href="" ng-click="logout()">logout</a>
+<br>
+<br>
+<a href="#/questionboard">Home</a> | <a href="#/answer/{{answers._id}}">Answer this Question</a>
+<hr>
+
+<h1>{{answers.question}}</h1>
+<p>{{answers.description}}</p>
+<br>
+<div ng-repeat="answer in answers.answers | orderBy: 'likes' : true">
+	<p>{{answer.user}}:</p>
+	<p><b>{{answer.answer}}</b></p>
+	<p>{{answer.details}}</p>
+	<p>{{answer.likes}} likes <button ng-click="like(answer._id)">Like!</button></p>
+	<br>
+</div>
